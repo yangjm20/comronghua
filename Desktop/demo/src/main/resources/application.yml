@@ -1,0 +1,68 @@
+#服务信息
+info:
+    app:
+        name: demo
+        description: 测试服务
+        owner:
+            - ran
+        emails:
+            - ran@xingshulin.com
+        branch-name: @BRANCH_NAME@
+        env: ${SPRING_PROFILES_ACTIVE}
+        build-number: @BUILD_NUMBER@
+        build-url: @BUILD_URL@
+        java-version: ${java.version}
+
+#默认环境配置
+server:
+    port: 8089
+logging:
+    file: /logs/demo/app.log
+    level:
+        com.ibatis: INFO
+management:
+    context-path: /manage
+
+
+
+spring:
+    #数据库
+    datasource:
+        url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8
+        username: root
+        password: root
+        driver-class-name: com.mysql.jdbc.Driver
+        initialSize: 5
+        minIdle: 5
+        maxActive: 10
+        testWhileIdle: true
+        maxWait: 1000
+        validationQuery:  SELECT 1
+#    aop:
+#        auto: true
+#        proxy-target-class: false
+
+#mybatis配置
+#指定mapper.xml的位置
+mybatis:
+    mapper-locations: classpath:mapper/*.xml
+    configuration:
+        mapUnderscoreToCamelCase: true
+        useColumnLabel: true
+
+
+#dev环境相关配置,覆盖上面的默认配置
+---
+spring:
+    profiles: dev
+
+#pub环境相关配置,覆盖上面的默认配置
+---
+spring:
+    profiles: qa
+
+     #数据库
+    datasource:
+        url: jdbc:mysql://qa-medchart.db.xsl.link:33306/xsl_solution?useUnicode=true&characterEncoding=UTF-8
+        username: xslxisittmp
+        password: f45DF87F
