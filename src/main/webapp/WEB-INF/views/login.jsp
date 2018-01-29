@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 
 
@@ -236,20 +237,19 @@
 <div class="logo_box">
     <h3>某某公司欢迎你</h3>
     <font color="red">${requestScope.message}</font>
-    <form action="/login" name="fuser"  method="post">
+    <form action="/j_spring_security_check" name="fuser"  method="post">
         <div class="input_outer">
             <span class="u_user"></span>
-            <input name="loginName" class="text" onFocus=" if(this.value=='输入ID或用户名登录') this.value=''" onBlur="if(this.value=='') this.value='输入ID或用户名登录'" value="输入ID或用户名登录" style="color: #FFFFFF !important" type="text">
+            <input name="j_username" class="text" onFocus=" if(this.value=='输入ID或用户名登录') this.value=''" onBlur="if(this.value=='') this.value='输入ID或用户名登录'" value="输入ID或用户名登录" style="color: #FFFFFF !important" type="text">
         </div>
         <div class="input_outer">
             <span class="us_uer"></span>
             <label class="l-login login_password" style="color: rgb(255, 255, 255);display: block;">输入密码</label>
-            <input name="loginPass" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;" onFocus="$('.login_password').hide()" onBlur="if(this.value=='') $('.login_password').show()" value="" type="password">
+            <input name="j_password" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;" onFocus="$('.login_password').hide()" onBlur="if(this.value=='') $('.login_password').show()" value="" type="password">
         </div>
-       <div class="mb2"><a class="act-but submit" href="javascript:document.fuser.submit();" style="color: #FFFFFF">登录</a></div>
+        <div class="mb2"><a class="act-but submit" href="javascript:document.fuser.submit();" style="color: #FFFFFF">登录</a></div>
         <input name="savesid" value="0" id="check-box" class="checkbox" type="checkbox"><span>记住用户名</span>
     </form>
-
 
   <%--  <c:if test="${errorMsg}" var="msg">
                 <span>${msg}</span>

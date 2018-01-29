@@ -13,22 +13,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <!-- VENDOR CSS -->
-    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/vendor/linearicons/style.css">
+    <link rel="stylesheet" href="${APP_PATH}/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${APP_PATH}/assets/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="${APP_PATH}/assets/vendor/linearicons/style.css">
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="${APP_PATH}/assets/css/main.css">
     <!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
-    <link rel="stylesheet" href="assets/css/demo.css">
+    <link rel="stylesheet" href="${APP_PATH}/assets/css/demo.css">
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!-- ICONS -->
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="${APP_PATH}/assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="${APP_PATH}/assets/img/favicon.png">
 
 
 
-    <link rel="stylesheet" href="css/bootstrapStyle/bootstrapStyle.css" type="text/css">
+    <link rel="stylesheet" href="${APP_PATH}/css/bootstrapStyle/bootstrapStyle.css" type="text/css">
     <script type="text/javascript">
         <!--
         var setting = {
@@ -167,7 +167,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+
+                  <%--  <div class="col-md-3">
                         <div class="panel panel-default">
                             <div class="panel panel-heading">
                                 <h4 class="panel-title">功能访问授权</h4>
@@ -205,7 +206,7 @@
                                 <p>fdsfsadfs</p>
                             </div>
                         </div>
-                    </div>
+                    </div>--%>
                 </div>
             </div>
         </div>
@@ -217,25 +218,21 @@
 </div>
 <!-- END WRAPPER -->
 <!-- Javascript -->
-<script src="assets/vendor/jquery/jquery.min.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<script src="assets/scripts/klorofil-common.js"></script>
+<script src="${APP_PATH}/assets/vendor/jquery/jquery.min.js"></script>
+<script src="${APP_PATH}/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="${APP_PATH}/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="${APP_PATH}/assets/scripts/klorofil-common.js"></script>
 
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.ztree.core.js"></script>
-<script type="text/javascript" src="js/jquery.ztree.excheck.js"></script>
-<script type="text/javascript" src="js/jquery.ztree.exedit.js"></script>
+<script type="text/javascript" src="${APP_PATH}/js/jquery.min.js"></script>
+<script type="text/javascript" src="${APP_PATH}/js/jquery.ztree.core.js"></script>
+<script type="text/javascript" src="${APP_PATH}/js/jquery.ztree.excheck.js"></script>
+<script type="text/javascript" src="${APP_PATH}/js/jquery.ztree.exedit.js"></script>
 
 
 <script type="text/javascript">
     <!--
     var setting = {
-        /* view: {
-             addHoverDom: addHoverDom,
-             removeHoverDom: removeHoverDom,
-             selectedMulti: false
-         },*/
+
         check: {
             enable: true
         },
@@ -244,9 +241,7 @@
                 enable: true
             }
         },
-        /*edit: {
-            enable: true
-        }*/
+
     };
 
     var zNodes =[
@@ -296,22 +291,7 @@
     });
 
     var newCount = 1;
-    /* function addHoverDom(treeId, treeNode) {
-         var sObj = $("#" + treeNode.tId + "_span");
-         if (treeNode.editNameFlag || $("#addBtn_"+treeNode.tId).length>0) return;
-         var addStr = "<span class='button add' id='addBtn_" + treeNode.tId
-             + "' title='add node' onfocus='this.blur();'></span>";
-         sObj.after(addStr);
-         var btn = $("#addBtn_"+treeNode.tId);
-         if (btn) btn.bind("click", function(){
-             var zTree = $.fn.zTree.getZTreeObj("treeDemo");
-             zTree.addNodes(treeNode, {id:(100 + newCount), pId:treeNode.id, name:"new node" + (newCount++)});
-             return false;
-         });
-     };
-     function removeHoverDom(treeId, treeNode) {
-         $("#addBtn_"+treeNode.tId).unbind().remove();
-     };*/
+
     //-->
 </script>
 

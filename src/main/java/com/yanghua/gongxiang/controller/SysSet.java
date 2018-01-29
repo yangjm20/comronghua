@@ -7,22 +7,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class SysSet {
 
-    @RequestMapping("/sysset")
+    @RequestMapping("/admin/sysset")
     public String showSysSet(){
         return "sys-set";
     }
 
-    @RequestMapping("/sysuser")
+    @RequestMapping("/user/sysuser")
     public String showSysUser(){
         return "sys-users";
     }
 
-    @RequestMapping("/sysrole")
+    @RequestMapping("/admin/sysrole")
     public String showSysRole(){
         return "sys-role";
     }
 
-    @RequestMapping("/sysdata")
+    @RequestMapping("/admin/sysdata")
     public String showSysData(){
         return "sys-data";
     }

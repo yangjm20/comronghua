@@ -21,25 +21,29 @@ import java.util.*;
 public class UserController {
     @Autowired
     UsersService usersService;
-
+//改动
     @RequestMapping("/showLogin")
     public String showLogin(){
         return "login";
     }
-
-    @RequestMapping("/login")
-    public ModelAndView login(@RequestParam("loginName") String admin_name, @RequestParam("loginPass") String password,HttpSession session,ModelAndView mv){
-        List<Users> users = usersService.getUsers(admin_name, password);
-        if(users.size()!=0){
-            session.setAttribute("user",users.get(0));
-            mv.setViewName("list");
-        }else{
-            mv.addObject("message","登录名或密码错误!请重新输入");
-            mv.setViewName("login");
-        }
-        return mv;
-
-    }
+    @RequestMapping("/list")
+       public String showList(){
+        return "list";
+     }
+//
+//    @RequestMapping("/login")
+//    public ModelAndView login(@RequestParam("j_username") String admin_name, @RequestParam("j_password") String password,HttpSession session,ModelAndView mv){
+//        List<Users> users = usersService.getUsers(admin_name, password);
+//        if(users.size()!=0){
+//            session.setAttribute("user",users.get(0));
+//            mv.setViewName("list");
+//        }else{
+//            mv.addObject("message","登录名或密码错误!请重新输入");
+//            mv.setViewName("login");
+//        }
+//        return mv;
+//
+//    }
 
     /**
      *

@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix='security' uri='http://www.springframework.org/security/tags'%>
 <html>
 <head>
     <%
@@ -34,7 +35,7 @@
 </head>
 <body>
 <!-- WRAPPER -->
-
+<security:authentication property="principal.username"></security:authentication>
 <div id="wrapper">
 
     <jsp:include page="tap.jsp"></jsp:include>
@@ -49,7 +50,8 @@
                 <div class="panel">
                     <div class="panel-heading">
                         <p class="panel-title" id="logInfo"></p>
-                        <div class="right">欢迎<span>${user.displayName}</span> 访问</div>
+                        <div class="right">欢迎<span><security:authentication property="principal.username"></security:authentication></span> 访问</div>
+
                     </div>
 
                 </div>
@@ -64,7 +66,8 @@
                             <div class="overlay"></div>
                             <div class="profile-main">
                                 <img src="${APP_PATH}/assets/img/user-medium.png" class="img-circle" alt="Avatar">
-                                <h3 class="name"> <span>${user.displayName}</span> </h3>
+                                <%--<h3 class="name"> <span>${user.displayName}</span> </h3>--%>
+                                <h3 class="name"> <span><security:authentication property="principal.username"></security:authentication></span> </h3>
                                 <span class="online-status status-available">在线</span>
                             </div>
                             <div class="profile-stat">
@@ -87,13 +90,18 @@
                             <div class="profile-info">
                                 <h4 class="heading">用户基本信息:</h4>
                                 <ul class="list-unstyled list-justify">
-                                    <li class="col-lg-offset-3">登录账号：<span>${user.username}</span></li>
+                                    <%--<li class="col-lg-offset-3">登录账号：<span>${user.username}</span></li>--%>
+                                        <%--${session.SPRING_SECURITY_CONTEXT.authentication.principal.username}--%>
+                                    <li class="col-lg-offset-3">登录账号：<span><security:authentication property="principal.username"></security:authentication></span></li>
                                     <%--<li class="col-lg-offset-3">所属部门：<span>${user.dept_id}</span></li>--%>
-                                    <li class="col-lg-offset-3">显示名称：<span>${user.displayName}</span></li>
-                                    <li class="col-lg-offset-3">性别：<span>${user.sex}</span></li>
+                                     <%--<security:authentication property="principal.sex">--%>
+                                         <%--<security:authentication property="principal.email">--%>
+                                             <%--<security:authentication property="principal.phone">--%>
+                                    <li class="col-lg-offset-3">显示名称：<span>displayName</span></li>
+                                    <li class="col-lg-offset-3">性别：<span>男</span></li>
                                     <%--<li class="col-lg-offset-3">出生日期：<span>${user.date}</span></li>--%>
-                                    <li class="col-lg-offset-3">电子邮箱：<span>${user.email}</span></li>
-                                    <li class="col-lg-offset-3">联系电话：<span>${user.phone}</span></li>
+                                    <li class="col-lg-offset-3">电子邮箱：<span>webmaster@sipi.com.cn</span></li>
+                                    <li class="col-lg-offset-3">联系电话：<span>021-64789808</span></li>
                                 </ul>
                             </div>
                         </div>

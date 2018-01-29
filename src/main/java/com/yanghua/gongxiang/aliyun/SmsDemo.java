@@ -47,7 +47,7 @@ public class SmsDemo {
      * @throws ClientException
      */
     public static SendSmsResponse sendSms() throws ClientException {
-
+//
         //可自助调整超时时间
         System.setProperty("sun.net.client.defaultConnectTimeout", "10000");
         System.setProperty("sun.net.client.defaultReadTimeout", "10000");

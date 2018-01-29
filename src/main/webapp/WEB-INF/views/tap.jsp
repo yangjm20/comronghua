@@ -6,7 +6,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix='security' uri='http://www.springframework.org/security/tags'%>
+
 <head>
+    <%
+        request.setAttribute("APP_PATH",request.getContextPath());
+    %>
     <title>农业设备服务</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -47,7 +52,7 @@
         </div>-->
         <div id="navbar-menu">
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
+                <%--<li class="dropdown">
                     <a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown">
                         <i class="lnr lnr-alarm"></i>
                         <span class="badge bg-danger">5</span>
@@ -60,15 +65,15 @@
                         <li><a href="#" class="notification-item"><span class="dot bg-success"></span>Your request has been approved</a></li>
                         <li><a href="#" class="more">See all notifications</a></li>
                     </ul>
-                </li>
+                </li>--%>
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="../../assets/img/user.png" class="img-circle" alt="Avatar"> <span>${user.displayName}</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="../../assets/img/user.png" class="img-circle" alt="Avatar"> <span><security:authentication property="principal.username"></security:authentication></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
-                        <li><a href="#"><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>
-                        <li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>
-                        <li><a href="#"><i class="lnr lnr-exit"></i> <span>退出</span></a></li>
+                       <%-- <li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
+                        <li><a href="#"><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>--%>
+                        <li><a href="${APP_PATH}/admin/sysset"><i class="lnr lnr-cog"></i> <span>设置</span></a></li>
+                        <li><a href="${APP_PATH}/logout"><i class="lnr lnr-exit"></i> <span>退出</span></a></li>
                     </ul>
                 </li>
                 <!-- <li>

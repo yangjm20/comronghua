@@ -17,27 +17,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <!-- VENDOR CSS -->
-    <link rel="stylesheet" href="../../assets/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../assets/vendor/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../assets/vendor/linearicons/style.css">
-    <link rel="stylesheet" href="../../assets/vendor/chartist/css/chartist-custom.css">
+    <link rel="stylesheet" href="${APP_PATH}/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${APP_PATH}/assets/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="${APP_PATH}/assets/vendor/linearicons/style.css">
+    <link rel="stylesheet" href="${APP_PATH}/assets/vendor/chartist/css/chartist-custom.css">
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="${APP_PATH}/assets/css/main.css">
     <!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
-    <link rel="stylesheet" href="../../assets/css/demo.css">
+    <link rel="stylesheet" href="${APP_PATH}/assets/css/demo.css">
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!-- ICONS -->
-    <link rel="apple-touch-icon" sizes="76x76" href="../../assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="../../assets/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="${APP_PATH}/assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="${APP_PATH}/assets/img/favicon.png">
 
-    <link href="../../assets/vendors/fullcalendar/fullcalendar.css" rel="stylesheet" media="screen">
+    <link href="${APP_PATH}/assets/vendors/fullcalendar/fullcalendar.css" rel="stylesheet" media="screen">
 </head>
 <div id="sidebar-nav" class="sidebar">
     <div class="sidebar-scroll">
         <nav>
             <ul class="nav">
-                <li><a href="${APP_PATH}/showLogin" class="active"><i class="lnr lnr-home"></i> <span>系统首页</span></a></li>
+                <li><a href="${APP_PATH}/list" class="active"><i class="lnr lnr-home"></i> <span>系统首页</span></a></li>
 
                 <li>
                     <a href="#orderManger" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>服务管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
@@ -62,26 +62,18 @@
                         </ul>
                     </div>
                 </li>
-
+<%--改动--%>
                 <li>
                     <a href="#sysManger" data-toggle="collapse" class="collapsed"><i class="glyphicon glyphicon-cog"></i> <span>系统管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                     <div id="sysManger" class="collapse ">
                         <ul class="nav">
-                            <li><a href="${APP_PATH}/sysset" class="">系统设置</a></li>
-                            <li><a href="${APP_PATH}/sysrole" class="">角色管理</a></li>
-                            <li><a href="${APP_PATH}/sysuser" class="">用户管理</a></li>
-                            <li><a href="${APP_PATH}/sysdata" class="">基础数据</a></li>
+                            <li><a href="${APP_PATH}/admin/sysset" class="">系统设置</a></li>
+                            <li><a href="${APP_PATH}/admin/sysrole" class="">角色管理</a></li>
+                            <li><a href="${APP_PATH}/user/sysuser" class="">用户管理</a></li>
+                            <li><a href="${APP_PATH}/admin/sysdata" class="">基础数据</a></li>
                         </ul>
                     </div>
                 </li>
-
-                <!--<li><a href="elements.html" class=""><i class="lnr lnr-code"></i> <span>预约管理</span></a></li>
-                <li><a href="charts.html" class=""><i class="lnr lnr-chart-bars"></i> <span>结算管理</span></a></li>
-                <li><a href="panels.html" class=""><i class="lnr lnr-cog"></i> <span>发票管理</span></a></li>
-                <li><a href="notifications.html" class=""><i class="lnr lnr-alarm"></i> <span>评价管理</span></a></li>
-                <!--<li><a href="tables.html" class=""><i class="lnr lnr-dice"></i> <span>Tables</span></a></li>
-                <li><a href="typography.html" class=""><i class="lnr lnr-text-format"></i> <span>Typography</span></a></li>
-                <li><a href="icons.html" class=""><i class="lnr lnr-linearicons"></i> <span>Icons</span></a></li>-->
             </ul>
         </nav>
     </div>

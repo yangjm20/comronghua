@@ -93,4 +93,7 @@ public interface RoleUsersMapper {
      * @mbg.generated Fri Jan 26 16:50:52 CST 2018
      */
     int updateByPrimaryKey(RoleUsers record);
+    //    新添加
+    RoleUsers findRolesFuncsByUserId(Integer userId);
+//    String findRolesFuncsByUserId(Integer userId);
 }

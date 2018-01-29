@@ -119,4 +119,7 @@ public interface UsersMapper {
      * @mbg.generated Fri Jan 26 16:50:52 CST 2018
      */
     int updateByPrimaryKey(Users record);
+    //    selectByUsername
+    List<Users> selectByUsername();
+    Users FindUserByUsername( @Param("username") String username);
 }
