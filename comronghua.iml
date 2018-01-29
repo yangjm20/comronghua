@@ -81,6 +81,7 @@
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:3.2.9.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:3.2.9.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-taglibs:3.2.0.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-acl:3.2.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-acl:3.2.10.RELEASE" level="project" />
+    <orderEntry type="library" name="aliyun-java-sdk-dysmsapi-1.0.01" level="project" />
   </component>
 </module>

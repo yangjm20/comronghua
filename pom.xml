@@ -167,10 +167,18 @@
       <version>3.2.9.RELEASE</version>
     </dependency>
     <dependency>
-    <groupId>org.springframework.security</groupId>
-    <artifactId>spring-security-taglibs</artifactId>
-    <version>3.2.0.RELEASE</version>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-taglibs</artifactId>
+      <version>3.2.0.RELEASE</version>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-acl -->
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-acl</artifactId>
+      <version>3.2.10.RELEASE</version>
+    </dependency>
+
     <!--security-->
   </dependencies>
   <build>

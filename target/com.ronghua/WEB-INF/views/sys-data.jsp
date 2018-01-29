@@ -11,7 +11,7 @@
     <%
         request.setAttribute("APP_PATH",request.getContextPath());
     %>
-    <title>农业设备服务</title>
+    <title>基础数据</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -170,8 +170,8 @@
                         <div class="tab-pane active" id="tab1">
                             <form>
 
-                                <div class="form-group col-md-2">
-                                    <label class="col-sm-4 control-label">区域</label>
+                                <div class="form-group col-md-3">
+                                    <label class="col-sm-2 control-label">区域</label>
                                     <div class="col-sm-6">
                                         <select class="form-control" name="region_name" id="add_region">
 
@@ -179,16 +179,16 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group col-md-2">
-                                    <label class="col-sm-4 control-label">省份</label>
+                                <div class="form-group col-md-3">
+                                    <label class="col-sm-2 control-label">省份</label>
                                     <div class="col-sm-6">
                                     <select class="form-control" name="provincename" id="add_province">
 
                                     </select>
                                     </div>
                                 </div>
-                                <div class="form-group col-md-2">
-                                    <label class="col-sm-4 control-label">城市</label>
+                                <div class="form-group col-md-3">
+                                    <label class="col-sm-2 control-label">城市</label>
                                     <div class="col-sm-6">
                                         <select class="form-control" name="cityname" id="add_city">
                                         </select>
@@ -196,8 +196,8 @@
 
                                 </div>
 
-                                <div class="form-group col-md-2">
-                                    <label class="col-sm-4 control-label">区/县</label>
+                                <div class="form-group col-md-3">
+                                    <label class="col-sm-2 control-label">区/县</label>
                                     <div class="col-sm-6">
                                     <select class="form-control" name="areaprovincename" id="add_counties">
                                     </select>
