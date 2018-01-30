@@ -7,9 +7,7 @@ import com.yanghua.gongxiang.services.ProvinceService;
 import com.yanghua.gongxiang.services.RegionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +32,53 @@ public class RegionController {
     public Msg regionsById(@PathVariable("regionId") Integer regionId){
 
         String provinceIds = regionService.getProvinceIds(regionId);
+        if(provinceIds.isEmpty()){
+            return Msg.fail();
+        }
         List<BasProvinces> provinces = provinceService.getProvinceByInIds(provinceIds);
+
         return Msg.success().add("provinces",provinces);
     }
+
+
+    /**
+     * 向管理区域中添加省份
+     * @param str
+     * @return
+     */
+    @RequestMapping(value = "/editRegion/{str}",method = RequestMethod.POST)
+    @ResponseBody
+    public Msg editRegionsById(@PathVariable("str")String str){
+
+        String[] split = str.split(",");
+        Integer regionID=Integer.parseInt(split[1]);
+        System.out.println(regionID);
+        boolean isSuccess = regionService.insertProvince(regionID, split[0]);
+        if(isSuccess){
+
+            return Msg.success();
+        }else{
+            return Msg.fail();
+        }
+    }
+
+    /**
+     * 从管理区域中删除省份
+     * @param str
+     * @return
+     */
+    @RequestMapping(value = "/deleteRegion/{str}",method = RequestMethod.DELETE)
+    @ResponseBody
+    public Msg delensById(@PathVariable("str")String str){
+        String[] split = str.split(",");
+        Integer regionID=Integer.parseInt(split[1]);
+        boolean isSuccess = regionService.deleteProvince(regionID, split[0]);
+        if(isSuccess){
+            return Msg.success();
+        }else{
+            return Msg.fail();
+        }
+    }
+
+
 }

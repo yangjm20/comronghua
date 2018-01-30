@@ -55,7 +55,6 @@
                     <a href="#accountManger" data-toggle="collapse" class="collapsed"><i class="glyphicon glyphicon-jpy"></i> <span>统计管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                     <div id="accountManger" class="collapse ">
                         <ul class="nav">
-
                             <li><a href="#" class="">服务统计</a></li>
                             <li><a href="#" class="">会员分析</a></li>
                             <li><a href="#" class="">评价分析</a></li>
