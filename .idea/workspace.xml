@@ -6,17 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6820b74-6a59-481b-a4a9-3f35c6f3e25d" name="Default" comment="spring_security">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/classes/com/yanghua/gongxiang/controller/RegionController.class" afterPath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/classes/com/yanghua/gongxiang/controller/RegionController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/classes/com/yanghua/gongxiang/services/RegionService.class" afterPath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/classes/com/yanghua/gongxiang/services/RegionService.class" />
+    <list default="true" id="c6820b74-6a59-481b-a4a9-3f35c6f3e25d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/classes/com/yanghua/gongxiang/bean/BasRegions.class" afterPath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/classes/com/yanghua/gongxiang/bean/BasRegions.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yanghua/gongxiang/bean/BasRegions.java" afterPath="$PROJECT_DIR$/src/main/java/com/yanghua/gongxiang/bean/BasRegions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yanghua/gongxiang/controller/RegionController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yanghua/gongxiang/controller/RegionController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yanghua/gongxiang/services/RegionService.java" afterPath="$PROJECT_DIR$/src/main/java/com/yanghua/gongxiang/services/RegionService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/left.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/left.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sys-data.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sys-data.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/views/left.jsp" afterPath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/views/left.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/views/sys-data.jsp" afterPath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/views/sys-data.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/target/classes/" />
     <ignored path="$PROJECT_DIR$/target/com.ronghua/" />
@@ -1277,7 +1269,7 @@
       <workItem from="1517227011084" duration="81000" />
       <workItem from="1517227095941" duration="1395000" />
       <workItem from="1517228896890" duration="5893000" />
-      <workItem from="1517277576815" duration="18201000" />
+      <workItem from="1517277576815" duration="18230000" />
     </task>
     <task id="LOCAL-00001" summary="ff">
       <created>1517191332445</created>
@@ -1342,7 +1334,14 @@
       <option name="project" value="LOCAL" />
       <updated>1517279609423</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="spring_security">
+      <created>1517317335363</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1517317335363</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1378,7 +1377,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="183042000" />
+    <option name="totallyTimeSpent" value="183071000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
