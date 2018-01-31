@@ -9,18 +9,14 @@
 ">
 
     <http auto-config="true">
-        <!--index.jsp处随意添加一些请求-->
         <intercept-url pattern="/admin/**" access="ROLE_ADMIN"/>
         <intercept-url pattern="/user/**" access="ROLE_ADMIN,ROLE_USER,ROLE_DELETE"/>
         <intercept-url pattern="/back/**" access="ROLE_USER"/>
-        <!--<intercept-url pattern="/list" access="ROLE_ADMIN"/>-->
+
         <intercept-url pattern="/test_security_jump" access="ROLE_ADMIN"/>
-        <!--<intercept-url pattern="/showLogin" access="ROLE_ADMIN"/>-->
-        <!--<access-denied-handler error-page="/test_security_error"/>-->
+
         <access-denied-handler error-page="/back/denied"/>
-        <!--<intercept-url pattern="/test_security_jump" access="ROLE_SALE"/>-->
-        <!--<access-denied-handler error-page="/test_security_error"/>-->
-        <!--<span style="color:#ff6600;">-->
+
         <!--自定义默认登录的同时，也确认了登录后的处理-->
         <form-login login-page="/showLogin" default-target-url="/list"/>
         <!--</span>-->

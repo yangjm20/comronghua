@@ -42,12 +42,10 @@ public class RegionService {
             return true;
         }else{
             if(origionProvinIds.contains(provinceId)){
-                System.out.println("false");
                 return false;
             }else{
                 basRegions.setProvIds(region.getProvIds()+","+provinceId);
                 basRegions.setId(regionId);
-                System.out.println(basRegions);
                 regionsMapper.updateByPrimaryKeySelective(basRegions);
                 return true;
             }

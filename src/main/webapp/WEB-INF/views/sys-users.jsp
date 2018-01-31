@@ -163,7 +163,6 @@
     var totalPages;
     $(function () {
         toPage(1);
-
     });
 
     function toPage(pn){

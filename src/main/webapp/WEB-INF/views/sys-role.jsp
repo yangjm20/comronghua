@@ -152,7 +152,41 @@
         <!-- MAIN CONTENT -->
 
         <div class="container">
-            <div class="row" >
+            <div class="row">
+                <div class="col-xs-9 ">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <span>角色列表</span>
+
+                        </div>
+
+                        <div class="panel-body">
+                            <table class="table table table-bordered" id="roles_tables">
+
+                                <thead>
+                                    <tr>
+                                        <td colspan="2">
+                                            <span class="col-md-2 col-lg-offset-10"><button type="button" id="add_role_btn" class="btn btn-primary">添加角色</button></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>角色名称</td>
+                                        <td>角色访问权限</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div
+
+
+            <%--<div class="row" >
                 <div class="col-xs-9 ">
                     <div class="panel panel-info">
                         <div class="panel-heading">
@@ -196,68 +230,68 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>--%>
         </div>
-       <%-- <div class="main-content">
-            <div class="container-fluid">
-                <h3>角色添加</h3>
-                <p>XXXX</p>
+        <%-- <div class="main-content">
+             <div class="container-fluid">
+                 <h3>角色添加</h3>
+                 <p>XXXX</p>
 
-                &lt;%&ndash;<div class="row">
-                    <div class="col-md-3">
-                        <div class="panel panel-default">
-                            <div class="panel panel-heading">
-                                <h4 class="panel-title">角色管理</h4>
-                            </div>
+                 &lt;%&ndash;<div class="row">
+                     <div class="col-md-3">
+                         <div class="panel panel-default">
+                             <div class="panel panel-heading">
+                                 <h4 class="panel-title">角色管理</h4>
+                             </div>
 
-                            <div class="panel-body">
-                                <p>fdsfsadfs</p>
-                                <ul id="treeDemo" class="ztree"></ul>
-                            </div>
-                        </div>
-                    </div>
+                             <div class="panel-body">
+                                 <p>fdsfsadfs</p>
+                                 <ul id="treeDemo" class="ztree"></ul>
+                             </div>
+                         </div>
+                     </div>
 
-                  <div class="col-md-3">
-                        <div class="panel panel-default">
-                            <div class="panel panel-heading">
-                                <h4 class="panel-title">功能访问授权</h4>
-                            </div>
+                   <div class="col-md-3">
+                         <div class="panel panel-default">
+                             <div class="panel panel-heading">
+                                 <h4 class="panel-title">功能访问授权</h4>
+                             </div>
 
-                            <div class="panel-body">
-                                <p>fdsfsadfs</p>
-                                <ul id="treeDemo1" class="ztree"></ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="panel panel-default">
-                            <div class="panel panel-heading">
-                                <h4 class="panel-title">角色属性</h4>
-                            </div>
+                             <div class="panel-body">
+                                 <p>fdsfsadfs</p>
+                                 <ul id="treeDemo1" class="ztree"></ul>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="col-md-4">
+                         <div class="panel panel-default">
+                             <div class="panel panel-heading">
+                                 <h4 class="panel-title">角色属性</h4>
+                             </div>
 
-                            <div class="panel-body">
-                                <p>fdsfsadfs</p>
-                                <p>fdsfsadfs</p>
-                                <p>fdsfsadfs</p>
-                                <p>fdsfsadfs</p>
-                            </div>
-                        </div>
+                             <div class="panel-body">
+                                 <p>fdsfsadfs</p>
+                                 <p>fdsfsadfs</p>
+                                 <p>fdsfsadfs</p>
+                                 <p>fdsfsadfs</p>
+                             </div>
+                         </div>
 
-                        <div class="panel panel-default">
-                            <div class="panel panel-heading">
-                                <h4 class="panel-title">当前授权账号</h4>
-                            </div>
+                         <div class="panel panel-default">
+                             <div class="panel panel-heading">
+                                 <h4 class="panel-title">当前授权账号</h4>
+                             </div>
 
-                            <div class="panel-body">
-                                <p>fdsfsadfs</p>
-                                <p>fdsfsadfs</p>
-                                <p>fdsfsadfs</p>
-                                <p>fdsfsadfs</p>
-                            </div>
-                        </div>
-                    </div>&ndash;%&gt;
-            </div>
-        </div>--%>
+                             <div class="panel-body">
+                                 <p>fdsfsadfs</p>
+                                 <p>fdsfsadfs</p>
+                                 <p>fdsfsadfs</p>
+                                 <p>fdsfsadfs</p>
+                             </div>
+                         </div>
+                     </div>&ndash;%&gt;
+             </div>
+         </div>--%>
     </div>
     <!-- END MAIN CONTENT -->
 </div>
@@ -341,6 +375,43 @@
     var newCount = 1;
 
     //-->
+</script>
+<script type="text/javascript">
+    $(function () {
+        toPage(1);
+    });
+
+    function toPage(pn){
+        $.ajax({
+            url:"${APP_PATH}/roles",
+            data:"pn="+pn,
+            type:"get",
+            success:function (result) {
+                console.log(result);
+                //1.解析并显示员工数据
+                build_roles_table(result);
+                //2.解析并显示分页信息
+                //build_page_info(result);
+                //3.解析显示分页条信息数据
+                //build_page_nav(result);
+            }
+        });
+    }
+
+    function  build_roles_table(result) {
+        $("#roles_tables tbody").empty();
+        var roles=result.extend.pageInfo.list;
+        $.each(roles,function (index,item) {
+
+            var roleName=$("<td></td>").append(item.name);
+            var rolefunc=$("<td></td>").append(item.funcs);
+
+            $("<tr></tr>").append(roleName)
+                .append(rolefunc)
+                .appendTo("#roles_tables tbody");
+
+        })
+    }
 </script>
 
 </body>

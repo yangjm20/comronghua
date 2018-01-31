@@ -38,7 +38,7 @@ public class MyUserService implements UserDetailsService {
         UserDetails user = new User(dbUser.getUsername(),dbUser.getPasswd(),true,true,true,true,grantedAuth);
         return user;
     }
-private Set<GrantedAuthority> getGrantedAuth(Users users){
+    private Set<GrantedAuthority> getGrantedAuth(Users users){
         Set<GrantedAuthority> authSet = new HashSet<GrantedAuthority>();
         try{
             RoleUsers roleUsers=roleService.findRolesFuncsByUserId(users.getId());
