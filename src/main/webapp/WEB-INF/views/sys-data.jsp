@@ -172,75 +172,77 @@
                             <div class="row">
                                 <form name="show_form">
 
-                                    <div class="form-group col-md-3">
-                                        <label class="col-sm-2 control-label">区域</label>
-                                        <div class="col-sm-6">
+                                    <div class="form-group col-md-2">
+                                        <label control-label">区域</label>
+                                        <div >
                                             <select class="form-control" name="region_name" id="add_region">
 
                                             </select>
                                         </div>
                                     </div>
 
-                                    <div class="form-group col-md-3">
-                                        <label class="col-sm-2 control-label">省份</label>
-                                        <div class="col-sm-6">
+                                    <div class="form-group col-md-2">
+                                        <label class=" control-label">省份</label>
+                                        <div >
                                             <select multiple size="8" class="form-control" name="provincename"
                                                     id="add_province_show">
                                             </select>
                                         </div>
                                     </div>
 
-                                    <div class="form-group col-md-3">
-                                        <label class="col-sm-2 control-label">城市</label>
-                                        <div class="col-sm-6">
+                                    <div class="form-group col-md-2">
+                                        <label class="control-label">城市</label>
+                                        <div >
                                             <select class="form-control" name="cityname" id="add_city">
                                             </select>
                                         </div>
 
                                     </div>
 
-                                    <div class="form-group col-md-3">
-                                        <label class="col-sm-2 control-label">区/县</label>
-                                        <div class="col-sm-6">
+                                    <div class="form-group  col-md-2">
+                                        <label class="control-label">区/县</label>
+                                        <div >
                                             <select class="form-control" name="areaprovincename" id="add_counties">
                                             </select>
                                         </div>
                                     </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-offset-1 col-md-2">
+                                            <button type="button" id="delete_province2region" class="btn btn-warning">删除
+                                            </button>
+                                        </div>
+                                    </div>
                                 </form>
-                            </div>
 
-                            <div class="row">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <button type="button" id="delete_province2region" class="btn btn-default">删除
-                                    </button>
-                                </div>
                             </div>
-
+                            <hr/>
                             <div class="row">
                                 <h4>新增省份到管理区域</h4>
+                                <br>
                                 <form name="edit_form">
 
                                     <div class="form-group col-md-3">
-                                        <label class="col-sm-2 control-label">所有省份</label>
-                                        <div class="col-sm-6">
+                                        <label class=" control-label">所有省份</label>
+                                        <div >
                                             <select multiple size="8" class="form-control" id="add_province_edit">
                                             </select>
                                         </div>
                                     </div>
 
                                     <div class="form-group col-md-3">
-                                        <label class="col-sm-2 control-label">区域</label>
-                                        <div class="col-sm-6">
+                                        <label class="control-label">区域</label>
+                                        <div >
                                             <select class="form-control" id="add_region_edit">
 
                                             </select>
                                         </div>
                                     </div>
 
-
+                                    <br>
                                     <div class="form-group">
-                                        <div class="col-sm-offset-2 col-sm-10">
-                                            <button type="button" id="add_province2region" class="btn btn-default">添加
+                                        <div class="col-md-offset-1 col-md-2">
+                                            <button type="button" id="add_province2region" class="btn btn-info">添加
                                             </button>
                                         </div>
 
@@ -576,11 +578,10 @@
             type: "DELETE",
             success: function (result) {
                 if(result.code==200){
-                    alert("要添加的省已经属于该区域，请重新添加");
+                    alert("删除失败，请重新删除");
                 }else{
-                    alert("添加成功");
+                    alert("删除成功");
                 }
-
             },
             error:function (result) {
                 alert("请重新选择要添加的省和管理区");
