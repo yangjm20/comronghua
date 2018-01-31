@@ -26,6 +26,10 @@ public class RoleService {
     public RoleUsers findRolesFuncsByUserId(Integer userId) {
         return roleUsersMapper.findRolesFuncsByUserId(userId);
     }
+
+    public void saveRole(Roles roles) {
+        rolesMapper.insertSelective(roles);
+    }
 }
 
 

@@ -9,6 +9,7 @@ import com.yanghua.gongxiang.services.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -26,7 +27,6 @@ public class RoleController {
     @RequestMapping(value = "/roles")
     @ResponseBody
     public Msg getRoles(@RequestParam(value = "pn",defaultValue = "1")Integer pn){
-        System.out.println(pn);
         PageHelper.startPage(pn,5);
         List<Roles> rolesList = roleService.getAll();
         for(Roles role:rolesList){
@@ -42,6 +42,14 @@ public class RoleController {
         }
         PageInfo page=new PageInfo(rolesList,5);
         return Msg.success().add("pageInfo",page);
+    }
+
+    @RequestMapping(value="/role/{func}",method = RequestMethod.POST)
+    @ResponseBody
+    public Msg saveRole(Roles roles){
+        System.out.println(roles);
+        roleService.saveRole(roles);
+        return Msg.success();
     }
 
 }
