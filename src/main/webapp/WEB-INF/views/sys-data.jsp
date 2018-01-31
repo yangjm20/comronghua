@@ -572,7 +572,6 @@
 
     function delete_province(elm1, elm2) {
         var str = elm1 + "," + elm2;
-        alert(str);
         $.ajax({
             url: "${APP_PATH}/deleteRegion/" + str,
             type: "DELETE",

@@ -21,7 +21,7 @@
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="com.yanghua.gongxiang.mapper"  targetProject=".\src\main\java">
+        <sqlMapGenerator targetPackage="mapper"  targetProject=".\src\main\resources">
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
 
@@ -48,8 +48,11 @@
         <table tableName="gx_users_parttime" domainObjectName="UsersParttime"></table>
         <table tableName="gx_bas_cities" domainObjectName="BasCities"></table>
         <table tableName="gx_bas_provinces" domainObjectName="BasProvinces"></table>
-        <table tableName="gx_bas_counties" domainObjectName="BasCounties"></table>-->
-        <table tableName="gx_bas_regions" domainObjectName="BasRegions"></table>
+        <table tableName="gx_bas_counties" domainObjectName="BasCounties"></table>
+        <table tableName="gx_bas_regions" domainObjectName="BasRegions"></table>-->
+        <table tableName="gx_grade_actions" domainObjectName="GradeAction"></table>
+        <table tableName="gx_grade_history" domainObjectName="GradeHistory"></table>
+        <table tableName="gx_grade_level" domainObjectName="GradeLevel"></table>
 
     </context>
 </generatorConfiguration>
