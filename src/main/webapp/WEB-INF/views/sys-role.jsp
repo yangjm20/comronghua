@@ -212,8 +212,6 @@
 <script src="${APP_PATH}/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <script src="${APP_PATH}/assets/scripts/klorofil-common.js"></script>
 
-
-
 <script type="text/javascript">
     var totalPages;
     $(function () {
