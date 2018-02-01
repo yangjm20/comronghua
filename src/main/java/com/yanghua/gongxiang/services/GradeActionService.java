@@ -29,4 +29,8 @@ public class GradeActionService {
     public void updateGradeAction(GradeAction gradeAction) {
         gradeActionMapper.updateByPrimaryKeySelective(gradeAction);
     }
+
+    public void deleteGradeAction(Integer id) {
+        gradeActionMapper.deleteByPrimaryKey(id);
+    }
 }

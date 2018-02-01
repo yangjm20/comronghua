@@ -244,6 +244,7 @@
                 if (result.code == 100) {
                     $("#gradeActionAddModel").modal("hide");
                     alert("设置成功");
+                    window.location.reload();
                 } else {
                     alert("设置失败");
                 }
@@ -283,9 +284,31 @@
             success: function (result) {
                 $("#gradeActionUpdateModel").modal("hide");
                 alert("更新成功");
+                window.location.reload();
             }
         })
     });
+
+    $(document).on("click",".delete_btn",function () {
+
+        var gradeActionid=$(this).attr("delete_id");
+        var gradeActionName=$(this).parents("tr").find("td:eq(2)").text();
+
+        if(confirm("确定要删除【"+gradeActionName+"】吗")){
+            deleGradeAction(gradeActionid);
+            //toPage(pageNum);
+        }
+    });
+
+    function deleGradeAction(gradeActionid){
+        $.ajax({
+            url:"${APP_PATH}/gradeAction/"+gradeActionid,
+            type:"DELETE",
+            success:function (result) {
+                window.location.reload();
+            }
+        });
+    }
 
     $("#gradeAction_query_btn").click(function () {
         window.location.href="${APP_PATH}/grade-history";

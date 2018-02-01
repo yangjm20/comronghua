@@ -63,6 +63,17 @@
                 </tbody>
             </table>
         </div>
+
+        <!-- 显示分页信息-->
+        <div class="row">
+            <div class="col-md-6" id="page_info_area">
+
+            </div>
+            <!--分页条信息-->
+            <div class="col-md-6" id="page_info_nav">
+
+            </div>
+        </div>
         <!-- END MAIN CONTENT -->
     </div>
     <!-- END MAIN -->
@@ -76,25 +87,33 @@
 <script src="${APP_PATH}/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <script src="${APP_PATH}/assets/scripts/klorofil-common.js"></script>
 <script type="text/javascript">
+    //1.页面加载完成以后，直接去发送ajax请求，要到分页数据
+
+    var totalPages;
     $(function () {
+        toPage(1);
+    });
+
+    function toPage(pn){
         $.ajax({
             url: "${APP_PATH}/gradeHistorys",
+            data:"pn="+pn,
             type: "get",
             success: function (result) {
                 //console.log(result);
                 //1.解析并显示员工数据
                 build_gradeHistory_table(result);
                 //2.解析并显示分页信息
-                //build_page_info(result);
+                build_page_info(result);
                 //3.解析显示分页条信息数据
-                //build_page_nav(result);
+                build_page_nav(result);
             }
         });
-    })
+    }
 
     function build_gradeHistory_table(result) {
         $("#gradeHistory_table tbody").empty();
-        var gradeAction = result.extend.gradeHistorys;
+        var gradeAction = result.extend.pageInfo.list;
         $.each(gradeAction, function (index, item) {
             var gradeHistoryId = $("<td></td>").append(item.id);
             var memId = $("<td></td>").append(item.memId);
@@ -112,6 +131,74 @@
 
         })
     }
+
+    //分页信息显示
+
+    function build_page_info(result) {
+        $("#page_info_area").empty();
+        $("#page_info_area").append("当前第"+ result.extend.pageInfo.pageNum+"页，","总"+result.extend.pageInfo.pages+"页数，","总共"+result.extend.pageInfo.total+"条数记录。")
+        totalPages=result.extend.pageInfo.pages;
+        pageNum=result.extend.pageInfo.pageNum;
+    }
+
+    //分页条信息显示
+    function build_page_nav(result){
+
+        $("#check_all").prop("checked",false);
+        $("#page_info_nav").empty();
+        var ul=$("<ul></ul>").addClass("pagination");
+        var firstPage=$("<li></li>").append($("<a></a>").append("首页").attr("href","#"));
+        var prePage=$("<li></li>").append($("<a></a>").append($("<span></span>").append("&laquo;")).attr("href","#"));
+
+
+        if(result.extend.pageInfo.hasPreviousPage==false){
+            firstPage.addClass("disabled");
+            prePage.addClass("disabled");
+        }else{
+            firstPage.click(function () {
+                toPage(1);
+            });
+
+            prePage.click(function () {
+                toPage(result.extend.pageInfo.prePage);
+            });
+        }
+
+        //添加首页和前一页的提示
+        ul.append(firstPage).append(prePage);
+
+        //1，2，3遍历给ul中添加页码提示
+        $.each(result.extend.pageInfo.navigatepageNums,function (index,item) {
+            var pageNum=$("<li></li>").append($("<a></a>").attr("href","#").append(item));
+            if(result.extend.pageInfo.pageNum==item){
+                pageNum.addClass("active");
+            }
+            pageNum.click(function () {
+                toPage(item);
+            });
+            ul.append(pageNum);
+        })
+
+        //添加下一页和末页的提示
+        var nextPage=$("<li></li>").append($("<a></a>").append($("<span></span>").append("&raquo;")).attr("href","#"));
+        var lastPage=$("<li></li>").append($("<a></a>").append("末页").attr("href","#"));
+
+        if(result.extend.pageInfo.hasNextPage==false){
+            nextPage.addClass("disabled");
+            lastPage.addClass("disabled");
+        }else{
+            nextPage.click(function () {
+                toPage(result.extend.pageInfo.nextPage);
+            });
+
+            lastPage.click(function () {
+                toPage(result.extend.pageInfo.pages);
+            });
+        }
+
+        ul.append(nextPage).append(lastPage).appendTo("#page_info_nav");
+    }
+
 
     //点击新增按钮弹出一个添加员工的模态框
     $("#gradeAction_add_btn").click(function () {

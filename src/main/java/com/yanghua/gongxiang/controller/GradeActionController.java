@@ -51,5 +51,13 @@ public class GradeActionController {
         return Msg.success();
     }
 
+    @RequestMapping(value = "/gradeAction/{gradeActionid}",method = RequestMethod.DELETE)
+    @ResponseBody
+    public Msg deleteGradeAction(@PathVariable("gradeActionid") Integer id){
+        System.out.println(id);
+        gradeActionService.deleteGradeAction(id);
+        return Msg.success();
+    }
+
 
 }
