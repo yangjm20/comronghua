@@ -49,7 +49,6 @@
                         <div class="col-sm-10">
                             <p class="form-control-static" id="username_update_static"></p>
                         </div>
-
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">昵称</label>

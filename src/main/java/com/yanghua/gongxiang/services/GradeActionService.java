@@ -16,4 +16,17 @@ public class GradeActionService {
         List<GradeAction> gradeActions = gradeActionMapper.selectByExample(null);
         return gradeActions;
     }
+
+    public void saveGradeAction(GradeAction gradeAction) {
+        gradeActionMapper.insertSelective(gradeAction);
+    }
+
+    public GradeAction selectGradeAction(Integer id) {
+        GradeAction gradeAction = gradeActionMapper.selectByPrimaryKey(id);
+        return gradeAction;
+    }
+
+    public void updateGradeAction(GradeAction gradeAction) {
+        gradeActionMapper.updateByPrimaryKeySelective(gradeAction);
+    }
 }

@@ -35,7 +35,7 @@
     <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
 </head>
 <!-- 员工添加模态框 -->
-<div class="modal fade" id="gradeActionAddModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="gradeActionUpdateModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -44,11 +44,11 @@
             </div>
             <div class="modal-body">
                 <form class="form-horizontal">
+
                     <div class="form-group">
                         <label class="col-sm-2 control-label">积分动作</label>
                         <div class="col-sm-10">
-                            <input type="text" name="actionName" class="form-control" id="actionName_add_input" placeholder="roleName">
-                            <span class="help-block"></span>
+                            <p class="form-control-static" id="actionName_update_static"></p>
                         </div>
                     </div>
 
@@ -71,7 +71,7 @@
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" id="save_gradeAction_btn" class="btn btn-primary">保存</button>
+                <button type="button" id="update_gradeAction_btn" class="btn btn-primary">更新</button>
             </div>
 
         </div>

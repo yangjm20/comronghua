@@ -8,6 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <%
+        request.setAttribute("APP_PATH", request.getContextPath());
+    %>
+
     <title>系统设置</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -28,6 +32,7 @@
 </head>
 <body>
 <jsp:include page="gradeAction_add.jsp"></jsp:include>
+<jsp:include page="gradeAction_update.jsp"></jsp:include>
 <!-- WRAPPER -->
 <div id="wrapper">
     <!-- NAVBAR -->
@@ -128,10 +133,16 @@
                                     <td>#</td>
                                     <td>积分动作</td>
                                     <td>积分值</td>
-                                    <td>操作<button class="btn btn-primary btn-sm col-xm-offset-3" id="gradeAction_add_btn">
-                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                                        新增
-                                    </button></td>
+                                    <td>操作
+                                        <button class="btn btn-primary btn-sm col-xm-offset-3" id="gradeAction_add_btn">
+                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                            新增
+                                        </button>
+                                        <button class="btn btn-primary btn-sm col-xm-offset-3" id="gradeAction_query_btn">
+                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                            积分记录查询
+                                        </button>
+                                    </td>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -159,9 +170,9 @@
     $("#grade_set").click(function () {
 
         $.ajax({
-            url:"${APP_PATH}/gradeActions",
-            type:"get",
-            success:function (result) {
+            url: "${APP_PATH}/gradeActions",
+            type: "get",
+            success: function (result) {
                 console.log(result);
                 //1.解析并显示员工数据
                 build_gradeAction_table(result);
@@ -173,21 +184,21 @@
         });
     });
 
-    function  build_gradeAction_table(result) {
+    function build_gradeAction_table(result) {
         $("#gradeAction_table tbody").empty();
-        var gradeAction=result.extend.gradeActions;
-        $.each(gradeAction,function (index,item) {
-            var gradeActionId=$("<td></td>").append(item.id);
-            var actionName=$("<td></td>").append(item.actionName);
-            var actionVal=$("<td></td>").append(item.actionVal);
+        var gradeAction = result.extend.gradeActions;
+        $.each(gradeAction, function (index, item) {
+            var gradeActionId = $("<td></td>").append(item.id);
+            var actionName = $("<td></td>").append(item.actionName);
+            var actionVal = $("<td></td>").append(item.actionVal);
 
-            var editBtn=$("<button></button>").addClass("btn btn-primary btn-sm edit_btn")
+            var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit_btn")
                 .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("编辑");
-            editBtn.attr("edit_id",item.id);
-            var delBtn=$("<button></button>").addClass("btn btn-danger btn-sm delete_btn")
+            editBtn.attr("edit_id", item.id);
+            var delBtn = $("<button></button>").addClass("btn btn-danger btn-sm delete_btn")
                 .append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("删除");
-            delBtn.attr("delete_id",item.id);
-            var btnTd=$("<td></td>").append(editBtn).append(" ").append(delBtn);
+            delBtn.attr("delete_id", item.id);
+            var btnTd = $("<td></td>").append(editBtn).append(" ").append(delBtn);
             $("<tr></tr>").append(gradeActionId)
                 .append(actionName)
                 .append(actionVal)
@@ -203,15 +214,82 @@
 
         //弹出模态框
         $("#gradeActionAddModel").modal({
-            backdrop:"static"
+            backdrop: "static"
         })
     });
 
-    function resetAll(elm){
+    function resetAll(elm) {
         $(elm)[0].reset();
         $(elm).find("*").removeClass("has-success has-error");
         $(elm).find(".help-block ").text("");
     }
+
+    save_gradeAction_btn
+
+    //点击保存，保存模态框
+    $("#save_gradeAction_btn").click(function () {
+        //发送ajax请求保存用户
+        save_gradeAction();
+    });
+
+    function save_gradeAction() {
+        var funcs = "";
+        $.ajax({
+            url: "${APP_PATH}/gradeAction",
+            type: "POST",
+            data: $("#gradeActionAddModel form").serialize(),
+            success: function (result) {
+                // console.log(result);
+
+                if (result.code == 100) {
+                    $("#gradeActionAddModel").modal("hide");
+                    alert("设置成功");
+                } else {
+                    alert("设置失败");
+                }
+            }
+        });
+    }
+
+    $(document).on("click", ".edit_btn", function () {
+
+        //1.查询积分事件表
+        getGradeAction($(this).attr("edit_id"));
+        $("#update_gradeAction_btn").attr("edit_id", $(this).attr("edit_id"));
+        //弹出模态框
+        $("#gradeActionUpdateModel").modal({
+            backdrop: "static"
+        })
+    });
+
+    function getGradeAction(id) {
+        $.ajax({
+            url: "${APP_PATH}/gradeAction/" + id,
+            type: "GET",
+            success: function (result) {
+                var gradeAction = result.extend.gradeAction;
+                $("#actionName_update_static").text(gradeAction.actionName);
+                $("#actionVal_add_input").val(gradeAction.actionVal);
+                $("#actionDesc_add_input").val(gradeAction.actionDesc);
+            }
+        });
+    }
+
+    $("#update_gradeAction_btn").click(function () {
+        $.ajax({
+            url: "${APP_PATH}/gradeAction/" + $(this).attr("edit_id"),
+            type: "PUT",
+            data: $("#gradeActionUpdateModel form").serialize(),
+            success: function (result) {
+                $("#gradeActionUpdateModel").modal("hide");
+                alert("更新成功");
+            }
+        })
+    });
+
+    $("#gradeAction_query_btn").click(function () {
+        window.location.href="${APP_PATH}/grade-history";
+    });
 
 </script>
 </body>
