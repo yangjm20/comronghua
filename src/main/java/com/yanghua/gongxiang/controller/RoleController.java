@@ -8,10 +8,7 @@ import com.yanghua.gongxiang.services.ContentTypeService;
 import com.yanghua.gongxiang.services.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,30 +23,80 @@ public class RoleController {
 
     @RequestMapping(value = "/roles")
     @ResponseBody
-    public Msg getRoles(@RequestParam(value = "pn",defaultValue = "1")Integer pn){
-        PageHelper.startPage(pn,5);
+    public Msg getRoles(@RequestParam(value = "pn", defaultValue = "1") Integer pn) {
+        PageHelper.startPage(pn, 5);
         List<Roles> rolesList = roleService.getAll();
-        for(Roles role:rolesList){
+        for (Roles role : rolesList) {
             String funcs = role.getFuncs();
             String[] split = funcs.split(",");
-            String funcName="";
-            for(String funcId:split){
-                String name=contentTypeService.getFuncName(Integer.parseInt(funcId));
-                name=name+",";
-                funcName+=name;
+            String funcName = "";
+            for (String funcId : split) {
+                String name = contentTypeService.getFuncName(Integer.parseInt(funcId));
+                name = name + ",";
+                funcName += name;
             }
-            role.setFuncs(funcName.substring(0,funcName.length()-1));
+            role.setFuncs(funcName.substring(0, funcName.length() - 1));
         }
-        PageInfo page=new PageInfo(rolesList,5);
-        return Msg.success().add("pageInfo",page);
+        PageInfo page = new PageInfo(rolesList, 5);
+        return Msg.success().add("pageInfo", page);
     }
 
-    @RequestMapping(value="/role/{func}",method = RequestMethod.POST)
+    @RequestMapping(value = "/role/{func}", method = RequestMethod.POST)
     @ResponseBody
-    public Msg saveRole(Roles roles){
+    public Msg saveRole(Roles roles) {
         System.out.println(roles);
         roleService.saveRole(roles);
         return Msg.success();
+    }
+
+    /**
+     * @Author SZ
+     * @param id
+     * @return
+     */
+    //新建一个方法，查询员工的属性名，作用是用于响应查询角色信息的请求
+    @RequestMapping(value = "/role/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public Msg getRole(@PathVariable("id") Integer id) {
+        Roles roles = roleService.getRole(id);
+        String funcs = roles.getFuncs();
+        String[] split = funcs.split(",");
+        String funcName = "";
+        for (String funcId : split) {
+            String name = contentTypeService.getFuncName(Integer.parseInt(funcId));
+            name = name + ",";
+            funcName += name;
+        }
+        roles.setFuncs(funcName.substring(0, funcName.length() - 1));
+        return Msg.success().add("role", roles);
+    }
+//新建
+//    @RequestMapping(value = "/roleType")
+//    @ResponseBody
+//    public Msg getroleType(){
+//        List<Roles> contentTypes=contentTypeService.getAll();
+//        return Msg.success().add("contentTypes",contentTypes);
+//    }
+
+    @RequestMapping(value = "/role/{id}", method = RequestMethod.PUT)
+    @ResponseBody
+    public Msg updateRole(Roles roles) {
+        System.out.println(roles);
+        roleService.updateRole(roles);
+//        System.out.println(roles);
+        return Msg.success();
+    }
+
+    //    单个删除的方法
+    @ResponseBody
+    @RequestMapping(value = "/role/{id}", method = RequestMethod.DELETE)
+    public Msg deleteRolesById(@PathVariable("id") Integer id) {
+        System.out.println(id);
+        roleService.deleteRoles(id);
+
+
+        return Msg.success();
+
     }
 
 }

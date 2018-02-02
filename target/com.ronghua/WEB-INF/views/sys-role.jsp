@@ -36,6 +36,7 @@
 
 <body>
 <jsp:include page="role_add.jsp"></jsp:include>
+<jsp:include page="role_update.jsp"></jsp:include>
 <!-- WRAPPER -->
 <div id="wrapper">
     <!-- NAVBAR -->
@@ -69,6 +70,7 @@
                                     <tr>
                                         <td>角色名称</td>
                                         <td>角色访问权限</td>
+                                        <td>操作</td>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -212,6 +214,7 @@
 <script src="${APP_PATH}/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <script src="${APP_PATH}/assets/scripts/klorofil-common.js"></script>
 
+
 <script type="text/javascript">
     var totalPages;
     $(function () {
@@ -243,8 +246,20 @@
             var roleName=$("<td></td>").append(item.name);
             var rolefunc=$("<td></td>").append(item.funcs);
 
+            //新添加 SZ
+            var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit_btn")
+                .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("修改");
+            //为编辑按钮添加一个自定义的属性，来表示当前员工id
+            editBtn.attr("edit_id",item.id);
+            var delBtn = $("<button></button>").addClass("btn btn-danger btn-sm delete_btn")
+                .append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("删除"); //在button里面添加上<span>元素
+            //新添加
+            delBtn.attr("delete_id",item.id);
+            var btnTd = $("<td></td>").append(editBtn).append(" ").append(delBtn);
+
             $("<tr></tr>").append(roleName)
                 .append(rolefunc)
+                .append(btnTd)
                 .appendTo("#roles_tables tbody");
 
         })
@@ -317,6 +332,7 @@
         ul.append(nextPage).append(lastPage).appendTo("#page_info_nav");
     }
 </script>
+
 <script type="text/javascript">
 
     $("#role_add_model_btn").click(function () {
@@ -383,7 +399,118 @@
             }
         });
     }
+    //SZ
+    //新增  按钮绑定点击事件
+    function getContentType_edit(elm){
+        $.ajax({
+            url:"${APP_PATH}/contentTypes_edit",
+            type:"GET",
+            success:function (result) {
+                console.log(result);
+                showContentType_edit(result,elm);
+            }
+        });
+    }
+    //展示
+    function showContentType_edit(result,elm){
+        $(elm).empty();
+        // getRole($(this).attr("edit_id"));
+        $.each(result.extend.contentTypes,function () {
+            // $.each(,function () {
+            // if(for_type.type=result.extend.type){
+            // $("<label></label>").append($("<input type='checkbox' checked>").attr("name","funcs").attr("value",this.id)).addClass("checkbox-inline").append(this.tpName).appendTo(elm);
+            // }else
+            // {
+            $("<label></label>").append($("<input type='checkbox'>").attr("name","funcs").attr("value",this.id)).addClass("checkbox-inline").append(this.tpName).appendTo(elm);
+            // }
 
+            // });
+
+        });
+    }
+    <%--展示checkbook的新方法--%>
+    <%--01 需要后台传入contenType的名称值，用于显示name名称--%>
+    <%--02 需要后台传入funcs的值，最好是已经切分好的--%>
+    //live可以为以后添加的事件绑定，jquery新版本里面没有live方法，使用on来代替
+    $(document).on("click",".edit_btn",function(){
+        // getDepts("#empEditModal select");
+        // getEmp($(this).attr("edit-id"));
+        //待修改
+        //获取后台的部门信息内容
+        //添加过多信息，会比较复杂  msg巧妙使用
+        // getContentType("#roleEditModel select");
+        //给更新按钮做准备
+        //查处角色信息，相当于在此处传入id
+        getRole($(this).attr("edit_id"));
+        //把role的ID传递过去
+        // $("edit_roles_btn").attr("edit_id",$(this).attr("edit_id"));
+        getContentType_edit("#edit_funcs");
+        $("#edit_roles_btn").attr("edit_id",$(this).attr("edit_id"));
+
+        $("#roleEditModel").modal({
+            backdrop:"static"
+        })
+    });
+
+    //    找到角色信息,发送请求
+    //注意要把参数传过来，否则会无法弹出对话框
+    function getRole(id){
+        $.ajax({
+            url:"${APP_PATH}/role/"+id,
+            type:"GET",
+            success:function(result){
+                console.log(result);
+                var roleData = result.extend.role;
+                $("#roleName_edit_static").text(roleData.name);
+                //  // $("#userUpdateModel select[name=deptId]").val([user.deptId]);
+                $("#roleType_edit_static").text(roleData.name).append("(").append(roleData.roleType).append(")");
+                $("#roleEditModel input[name=status]").val([roleData.status]);
+                // $("#roleEditModel input[name=funcs]").val(roleData.funcs);
+                // return roleData;
+
+            }
+        });
+
+        $("#edit_roles_btn").click(function () {
+            //    发送ajax请求，保存更新的
+            $.ajax({
+                url:"${APP_PATH}/role/"+$(this).attr("edit_id"),
+                //  要和控制器接收相同的请求模式
+                type:"POST",
+                //  此处用于带上put请求
+                data:$("#roleEditModel form").serialize()+"&_method=PUT",
+                success:function(result) {
+                    // alert(result.msg);
+                    //  $("#roleEditModel").modal("hide");
+                    //  //2、回到本页面
+                    //  to_page(currentPage);
+                    //    关闭对话框
+                    $("#roleEditModel").modal("hide");
+                    //    回到本页面
+                    //????等合并的时候来写
+                }
+            });
+
+        });
+    }
+    //新增代码块  删除
+    $(document).on("click",".delete_btn",function () {
+        //1、弹出是否确认删除对话框,弹出名字
+        //    alert($(this).parents("tr").find("td:eq(1)").text());
+        var roleName =$(this).parents("tr").find("td:eq(1)").text();
+        var roleId = $(this).attr("delete_id");
+        if(confirm("确认删除【"+roleName+"】吗？")){
+            //        确认，发送ajax请求删除即可
+            $.ajax({
+                url:"${APP_PATH}/role/"+roleId,
+                type:"DELETE",
+                success:function (result) {
+                    alert(result.msg);
+                    //    需要添加返回某页
+                }
+            });
+        }
+    });
 
 </script>
 

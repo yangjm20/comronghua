@@ -30,6 +30,27 @@ public class RoleService {
     public void saveRole(Roles roles) {
         rolesMapper.insertSelective(roles);
     }
+
+    /**
+     * @Author SZ
+     * @param id
+     * @return
+     */
+    public Roles getRole(Integer id) {
+
+        Roles roles = rolesMapper.selectByPrimaryKey(id);
+        return roles;
+
+    }
+
+
+    public void updateRole(Roles roles) {
+        rolesMapper.updateByPrimaryKeySelective(roles);
+    }
+
+    public void deleteRoles(Integer id) {
+        rolesMapper.deleteByPrimaryKey(id);
+    }
 }
 
 

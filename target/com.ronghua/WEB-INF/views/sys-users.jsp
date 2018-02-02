@@ -468,7 +468,6 @@
                $("#passwd_input").val(user.passwd);
                $("#displayName_update_input").val(user.displayName);
                $("#userUpdateModel input[name=sex]").val([user.sex]);
-               //$("#polities_update_input").val(user.nickname);
                $("#userUpdateModel select[name=deptId]").val([user.deptId]);
                $("#title_update_input").val(user.title);
                $("#email_update_input").val(user.email);

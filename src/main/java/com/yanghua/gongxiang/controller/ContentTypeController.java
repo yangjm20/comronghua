@@ -22,4 +22,15 @@ public class ContentTypeController {
         List<ContentType> contentTypes=contentTypeService.getAll();
         return Msg.success().add("contentTypes",contentTypes);
     }
+
+    /**
+     * @Author SZ
+     * @return
+     */
+    @RequestMapping(value = "/contentTypes_edit")
+    @ResponseBody
+    public Msg getContentType_edit(){
+        List<ContentType> contentTypes=contentTypeService.getAll();
+        return Msg.success().add("contentTypes",contentTypes);
+    }
 }
