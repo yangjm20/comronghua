@@ -6,18 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6820b74-6a59-481b-a4a9-3f35c6f3e25d" name="Default" comment="角色更新，删除">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/role_update.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/classes/com/yanghua/gongxiang/controller/RegionController.class" afterPath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/classes/com/yanghua/gongxiang/controller/RegionController.class" />
+    <list default="true" id="c6820b74-6a59-481b-a4a9-3f35c6f3e25d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yanghua/gongxiang/controller/ContentTypeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yanghua/gongxiang/controller/ContentTypeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yanghua/gongxiang/controller/RegionController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yanghua/gongxiang/controller/RegionController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yanghua/gongxiang/controller/RoleController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yanghua/gongxiang/controller/RoleController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yanghua/gongxiang/services/RoleService.java" afterPath="$PROJECT_DIR$/src/main/java/com/yanghua/gongxiang/services/RoleService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sys-role.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sys-role.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sys-users.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sys-users.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/views/sys-role.jsp" afterPath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/views/sys-role.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/views/sys-users.jsp" afterPath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/views/sys-users.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/target/classes/" />
     <ignored path="$PROJECT_DIR$/target/com.ronghua/" />
@@ -50,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sys-role.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="189">
-              <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+              <caret line="34" column="7" lean-forward="false" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -1383,7 +1373,7 @@
       <workItem from="1517494384051" duration="3293000" />
       <workItem from="1517537936466" duration="2384000" />
       <workItem from="1517555773659" duration="831000" />
-      <workItem from="1517567429128" duration="3856000" />
+      <workItem from="1517567429128" duration="5451000" />
     </task>
     <task id="LOCAL-00001" summary="ff">
       <created>1517191332445</created>
@@ -1532,7 +1522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1517539324927</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="角色更新，删除">
+      <created>1517576644930</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1517576644930</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1568,7 +1565,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="248529000" />
+    <option name="totallyTimeSpent" value="250124000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1671,7 +1668,8 @@
     <MESSAGE value="逆向工程生成积分相关表以及积分的CURD" />
     <MESSAGE value="积分CRUD" />
     <MESSAGE value="角色，积分分页技术实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="角色，积分分页技术实现" />
+    <MESSAGE value="角色更新，删除" />
+    <option name="LAST_COMMIT_MESSAGE" value="角色更新，删除" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2096,7 +2094,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sys-role.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
-          <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+          <caret line="34" column="7" lean-forward="false" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
           <folding />
         </state>
       </provider>
