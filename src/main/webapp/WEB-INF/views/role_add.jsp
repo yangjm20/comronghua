@@ -52,7 +52,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+               <%--     <div class="form-group">
                         <label class="col-sm-2 control-label">角色类型</label>
                         <div class="col-sm-10">
                             <select name="roleType"  id="roleType" class="form-control">
@@ -63,11 +63,11 @@
                                 <option value="C">普通</option>
                             </select>
                         </div>
-                    </div>
+                    </div>--%>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">角色说明</label>
                         <div class="col-sm-10">
-                            <input type="text" name="remark" class="form-control" id="passwd_add_input" placeholder="passwd">
+                            <input type="text" name="remark" class="form-control" id="passwd_add_input">
                         </div>
                     </div>
                     <div class="form-group">

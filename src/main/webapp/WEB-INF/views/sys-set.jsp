@@ -336,7 +336,7 @@
 
 </script>
 <script type="text/javascript">
-    $("#evel_set").click(function () {
+    $("#level_set").click(function () {
 
         $.ajax({
             url: "${APP_PATH}/gradelevels",
