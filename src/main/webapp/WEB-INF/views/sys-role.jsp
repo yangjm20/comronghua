@@ -63,7 +63,7 @@
 
                                 <thead>
                                     <tr>
-                                        <td colspan="2">
+                                        <td colspan="3">
                                             <span class="col-md-2 col-lg-offset-10"><button type="button" id="role_add_model_btn" class="btn btn-primary">添加角色</button></span>
                                         </td>
                                     </tr>
