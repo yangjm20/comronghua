@@ -7,39 +7,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6820b74-6a59-481b-a4a9-3f35c6f3e25d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/charts.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/elements.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/icons.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/sys-role.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/sys-set.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/sys-users.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/tables.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/static/typography.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/classes/com/yanghua/gongxiang/controller/UserController.class" afterPath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/classes/com/yanghua/gongxiang/controller/UserController.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/static/charts.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/static/elements.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/static/icons.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/static/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/static/sys-role.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/static/sys-set.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/static/sys-users.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/static/tables.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/static/typography.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/classes/com/yanghua/gongxiang/services/UsersService.class" afterPath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/classes/com/yanghua/gongxiang/services/UsersService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yanghua/gongxiang/controller/RoleController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yanghua/gongxiang/controller/RoleController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yanghua/gongxiang/controller/TestSecurityController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yanghua/gongxiang/controller/TestSecurityController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yanghua/gongxiang/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yanghua/gongxiang/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yanghua/gongxiang/services/MyUserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/yanghua/gongxiang/services/MyUserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/yanghua/gongxiang/services/UsersService.java" afterPath="$PROJECT_DIR$/src/main/java/com/yanghua/gongxiang/services/UsersService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring-security.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring-security.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/foot.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/foot.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/grade-history.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/grade-history.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/gradeAction_add.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/gradeAction_add.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/gradeAction_update.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/gradeAction_update.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/gradeLevel_add.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/gradeLevel_add.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/gradeLevel_update.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/gradeLevel_update.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/role_add.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/role_add.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sys-role.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sys-role.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sys-set.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sys-set.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sys-users.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sys-users.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/views/foot.jsp" afterPath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/views/foot.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/views/sys-role.jsp" afterPath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/views/sys-role.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/views/sys-set.jsp" afterPath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/views/sys-set.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/views/sys-users.jsp" afterPath="$PROJECT_DIR$/target/com.ronghua/WEB-INF/views/sys-users.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.ronghua/index.jsp" afterPath="$PROJECT_DIR$/target/com.ronghua/index.jsp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/comronghua.iml" afterPath="$PROJECT_DIR$/comyanghua.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/classes/" />
     <ignored path="$PROJECT_DIR$/target/com.ronghua/" />
@@ -1345,6 +1324,18 @@
       <envs />
       <patterns />
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="comronghua" />
+      <envs />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -1525,7 +1516,7 @@
       <workItem from="1517555773659" duration="831000" />
       <workItem from="1517567429128" duration="9989000" />
       <workItem from="1517665281910" duration="1886000" />
-      <workItem from="1517838848043" duration="2157000" />
+      <workItem from="1517838848043" duration="2292000" />
     </task>
     <task id="LOCAL-00001" summary="ff">
       <created>1517191332445</created>
@@ -1695,7 +1686,14 @@
       <option name="project" value="LOCAL" />
       <updated>1517753300199</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="role curd">
+      <created>1517841060415</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1517841060415</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1731,7 +1729,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="258705000" />
+    <option name="totallyTimeSpent" value="258840000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
