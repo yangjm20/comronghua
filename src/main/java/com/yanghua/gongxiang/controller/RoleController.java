@@ -70,30 +70,20 @@ public class RoleController {
         roles.setFuncs(funcName.substring(0, funcName.length() - 1));
         return Msg.success().add("role", roles);
     }
-//新建
-//    @RequestMapping(value = "/roleType")
-//    @ResponseBody
-//    public Msg getroleType(){
-//        List<Roles> contentTypes=contentTypeService.getAll();
-//        return Msg.success().add("contentTypes",contentTypes);
-//    }
 
     @RequestMapping(value = "/role/{id}", method = RequestMethod.PUT)
     @ResponseBody
     public Msg updateRole(Roles roles) {
         System.out.println(roles);
         roleService.updateRole(roles);
-//        System.out.println(roles);
         return Msg.success();
     }
 
-    //    单个删除的方法
     @ResponseBody
     @RequestMapping(value = "/role/{id}", method = RequestMethod.DELETE)
     public Msg deleteRolesById(@PathVariable("id") Integer id) {
         System.out.println(id);
         roleService.deleteRoles(id);
-
 
         return Msg.success();
 

@@ -195,11 +195,8 @@
             type: "get",
             success: function (result) {
                 console.log(result);
-                //1.解析并显示员工数据
                 build_gradeAction_table(result);
-                //2.解析并显示分页信息
                 //build_page_info(result);
-                //3.解析显示分页条信息数据
                 //build_page_nav(result);
             }
         });
@@ -229,7 +226,6 @@
         })
     }
 
-    //点击新增按钮弹出一个添加员工的模态框
     $("#gradeAction_add_btn").click(function () {
         resetAll("#gradeActionAddModel form");
 
@@ -345,9 +341,7 @@
                 console.log(result);
                 //1.解析并显示员工数据
                 build_gradeLevel_table(result);
-                //2.解析并显示分页信息
                 //build_page_info(result);
-                //3.解析显示分页条信息数据
                 //build_page_nav(result);
             }
         });

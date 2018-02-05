@@ -172,11 +172,8 @@
             type:"get",
             success:function (result) {
                 //console.log(result);
-                //1.解析并显示员工数据
                 build_users_table(result);
-                //2.解析并显示分页信息
                 build_page_info(result);
-                //3.解析显示分页条信息数据
                 build_page_nav(result);
             }
         });

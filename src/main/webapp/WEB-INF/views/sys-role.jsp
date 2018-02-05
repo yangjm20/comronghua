@@ -486,6 +486,7 @@
                     //  to_page(currentPage);
                     //    关闭对话框
                     $("#roleEditModel").modal("hide");
+                    window.location.reload();
                     //    回到本页面
                     //????等合并的时候来写
                 }

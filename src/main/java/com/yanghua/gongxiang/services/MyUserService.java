@@ -1,6 +1,5 @@
 package com.yanghua.gongxiang.services;
 
-//import org.springframework.security.core.userdetails.UserDetails;
 
 import com.yanghua.gongxiang.bean.RoleUsers;
 import com.yanghua.gongxiang.bean.Users;

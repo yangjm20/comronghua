@@ -34,7 +34,6 @@
     <!-- <script src="E:\sublime\vue.js"></script> -->
     <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
 </head>
-<!-- 员工添加模态框 -->
 <div class="modal fade" id="gradeLevelAddModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

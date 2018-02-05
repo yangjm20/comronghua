@@ -9,9 +9,9 @@
 ">
 
     <http auto-config="true">
-        <intercept-url pattern="/admin/**" access="ROLE_ADMIN"/>
+      <!--  <intercept-url pattern="/admin/**" access="ROLE_ADMIN"/>
         <intercept-url pattern="/user/**" access="ROLE_ADMIN,ROLE_USER,ROLE_DELETE"/>
-        <intercept-url pattern="/back/**" access="ROLE_USER"/>
+        <intercept-url pattern="/back/**" access="ROLE_USER"/>-->
 
         <intercept-url pattern="/test_security_jump" access="ROLE_ADMIN"/>
 

@@ -57,7 +57,6 @@ public class UsersService {
         criteria.andIdIn(ids);
         usersMapper.deleteByExample(usersExample);
     }
-    //    新加代码段
     public Users findUserByUsername(String username){
         return usersMapper.FindUserByUsername(username);
     }

@@ -48,11 +48,7 @@ public class TestSecurityController {
     public String login_to_normal(){
         return "login";
     }
-//    @RequestMapping("/test_mybatis_users")
-//    public String test_MyBatis(){
-//        return "test_Mybatis";
-//    }
-//    新加的
+
 @RequestMapping(value = "/test_mybatis_users")
 @ResponseBody
 public List<Users> FindUserController() {

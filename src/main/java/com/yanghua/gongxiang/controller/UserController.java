@@ -21,7 +21,7 @@ import java.util.*;
 public class UserController {
     @Autowired
     UsersService usersService;
-//改动
+
     @RequestMapping("/showLogin")
     public String showLogin(){
         return "login";
@@ -30,26 +30,7 @@ public class UserController {
        public String showList(){
         return "list";
      }
-//
-//    @RequestMapping("/login")
-//    public ModelAndView login(@RequestParam("j_username") String admin_name, @RequestParam("j_password") String password,HttpSession session,ModelAndView mv){
-//        List<Users> users = usersService.getUsers(admin_name, password);
-//        if(users.size()!=0){
-//            session.setAttribute("user",users.get(0));
-//            mv.setViewName("list");
-//        }else{
-//            mv.addObject("message","登录名或密码错误!请重新输入");
-//            mv.setViewName("login");
-//        }
-//        return mv;
-//
-//    }
 
-    /**
-     *
-     * @param pn
-     * @return
-     */
     @RequestMapping(value = "/users")
     @ResponseBody
     public Msg getUsers(@RequestParam(value = "pn",defaultValue = "1")Integer pn){
@@ -60,17 +41,11 @@ public class UserController {
         return Msg.success().add("pageInfo",page);
     }
 
-    /**
-     *
-     *用户保存
-     * @return
-     */
 
     @RequestMapping(value = "/user",method = RequestMethod.POST)
     @ResponseBody
     public Msg saveUser(@Valid Users user,BindingResult result){
         if(result.hasErrors()){
-            //校验失败，应该返回失败，在模态框中显示校验失败的错误信息
             Map<String ,Object> map=new HashMap<String,Object>();
             List<FieldError> fieldErrors = result.getFieldErrors();
             for(FieldError error:fieldErrors){
@@ -89,11 +64,7 @@ public class UserController {
 
     }
 
-    /**
-     * 检测用户名是否可用
-     * @param username
-     * @return
-     */
+
     @RequestMapping("/checkuser")
     @ResponseBody
     public Msg checkuser(@RequestParam("userName") String username){

@@ -34,7 +34,6 @@
     <!-- <script src="E:\sublime\vue.js"></script> -->
     <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
 </head>
-<!-- 员工添加模态框 -->
 <div class="modal fade" id="roleAddModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -52,7 +51,7 @@
                         </div>
                     </div>
 
-               <%--     <div class="form-group">
+                 <div class="form-group">
                         <label class="col-sm-2 control-label">角色类型</label>
                         <div class="col-sm-10">
                             <select name="roleType"  id="roleType" class="form-control">
@@ -63,7 +62,7 @@
                                 <option value="C">普通</option>
                             </select>
                         </div>
-                    </div>--%>
+                    </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">角色说明</label>
                         <div class="col-sm-10">

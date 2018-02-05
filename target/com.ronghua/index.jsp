@@ -7,13 +7,3 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:forward page="/showLogin"></jsp:forward>
-<%--<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-<h1>hihih</h1>
-</body>
-</html>--%>
-<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
-<%--<jsp:forward page="/test_mylogin_security"></jsp:forward>--%>
